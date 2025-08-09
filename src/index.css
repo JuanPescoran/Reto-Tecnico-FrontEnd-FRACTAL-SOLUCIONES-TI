@@ -1,0 +1,93 @@
+/* src/index.css */
+
+/* 1. Definición de Colores y Fuentes */
+:root {
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --surface-color: #ffffff;
+  --text-color: #212529;
+  --text-color-light: #6c757d;
+  --border-color: #dee2e6;
+  --danger-color: #dc3545;
+  --danger-color-hover: #c82333;
+  --gradient-bg: linear-gradient(170deg, #e6f7ff 0%, #f8f9fa 100%);
+}
+
+/* 2. Reseteo y Estilos Base del Body */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--gradient-bg);
+  min-height: 100vh;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Estilos de Botones */
+.button {
+  /* Flexbox para alinear el ícono y el texto */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Espacio entre el ícono y el texto */
+
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px; /* Un poco más redondeado */
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* Transición suave para todos los cambios */
+  transition: all 0.2s ease-in-out;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+.button-primary:hover {
+  background-color: var(--primary-color-hover);
+  transform: translateY(-2px); /* Efecto de "levantarse" */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Estado de foco para accesibilidad (navegación con teclado) */
+.button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* 4. Estilos de Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--surface-color);
+}
+
+th, td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+  background-color: #f8f9fa;
+  color: var(--text-color-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+tbody tr:hover {
+  background-color: #f1f3f5;
+}

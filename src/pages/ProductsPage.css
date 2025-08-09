@@ -1,0 +1,36 @@
+/* src/pages/ProductsPage.css */
+.content-card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h1 {
+    margin: 0;
+}
+
+.options-cell {
+    display: flex;
+    gap: 0.5rem; /* Espacio entre los botones de opciones */
+}
+
+/* Estilos para cuando la tabla está vacía */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-color-light);
+}
+
+.empty-state h3 {
+    color: var(--text-color);
+}

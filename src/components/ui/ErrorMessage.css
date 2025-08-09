@@ -1,0 +1,46 @@
+.error-box {
+    display: flex;
+    align-items: flex-start;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: #fff1f0; /* Color de fondo rojo claro */
+    border: 1px solid #ffccc7;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.error-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #cf1322; /* Color rojo oscuro para el ícono */
+    margin-right: 16px;
+    margin-top: 4px;
+}
+
+.error-content {
+    flex-grow: 1;
+}
+
+.error-title {
+    margin: 0 0 8px 0;
+    color: #a8071a;
+    font-size: 1.1rem;
+}
+
+.error-message {
+    margin: 0 0 16px 0;
+    color: #5c0011;
+}
+
+.retry-button {
+    background-color: var(--danger-color); /* Usando variables de index.css */
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.retry-button:hover {
+    opacity: 0.85;
+}
