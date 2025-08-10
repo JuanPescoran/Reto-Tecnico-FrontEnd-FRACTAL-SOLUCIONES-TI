@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { MyOrdersPage } from './pages/MyOrdersPage';
-import { AddEditOrderPage } from './pages/AddEditOrderPage';
 import { ProductsPage } from './pages/ProductsPage';
+import {AddEditOrderPage} from "./pages/AddEditOrderPage.tsx";
 
 export const App: React.FC = () => {
     return (

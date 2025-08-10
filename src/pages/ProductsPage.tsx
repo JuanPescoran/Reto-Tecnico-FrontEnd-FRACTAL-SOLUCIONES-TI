@@ -39,8 +39,6 @@ export const ProductsPage: React.FC = () => {
         fetchProducts();
     }, []);
 
-    if (isLoading) return <Spinner />;
-
     // --- MODAL & FORM HANDLERS ---
     const handleOpenModal = (product: Product | null = null) => {
         setEditingProduct(product);
@@ -91,7 +89,6 @@ export const ProductsPage: React.FC = () => {
             <div className="card-header">
                 <h1>Manage Products</h1>
                 <button className="button button-primary" onClick={() => handleOpenModal()}>
-                    {/* Ícono SVG en línea. Es ligero y hereda el color del botón. */}
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -145,8 +142,6 @@ export const ProductsPage: React.FC = () => {
 };
 
 // --- SUB-COMPONENT: ProductForm ---
-// Este componente vive dentro del mismo archivo porque está estrechamente acoplado a ProductsPage,
-// pero se define fuera para evitar re-declaraciones en cada render.
 
 interface ProductFormProps {
     product: Product | null;
@@ -167,10 +162,39 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCancel }) 
         onSave({ name, price });
     };
 
+    // Estilos para el formulario. Se definen como objetos para mantener el JSX limpio.
+    const formStyles: React.CSSProperties = {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1.5rem' // Espacio vertical entre los campos
+    };
+    const labelStyles: React.CSSProperties = {
+        display: 'block',
+        marginBottom: '0.5rem',
+        fontWeight: 600,
+        color: '#495057'
+    };
+    const inputStyles: React.CSSProperties = {
+        width: '100%',
+        padding: '0.75rem',
+        fontSize: '1rem',
+        border: '1px solid #dee2e6', // Usando variable de color implícita de nuestro CSS
+        borderRadius: '6px',
+        boxSizing: 'border-box'
+    };
+    const buttonContainerStyles: React.CSSProperties = {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        gap: '0.75rem',
+        marginTop: '1rem',
+        paddingTop: '1.5rem',
+        borderTop: '1px solid #dee2e6' // Usando variable de color implícita
+    };
+
     return (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <form onSubmit={handleSubmit} style={formStyles}>
             <div>
-                <label htmlFor="product-name" style={{ display: 'block', marginBottom: '0.5rem' }}>Product Name</label>
+                <label htmlFor="product-name" style={labelStyles}>Product Name</label>
                 <input
                     id="product-name"
                     type="text"
@@ -178,11 +202,12 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCancel }) 
                     value={name}
                     onChange={e => setName(e.target.value)}
                     required
-                    style={{ width: '100%', padding: '0.5rem' }}
+                    maxLength={255}
+                    style={inputStyles}
                 />
             </div>
             <div>
-                <label htmlFor="product-price" style={{ display: 'block', marginBottom: '0.5rem' }}>Price</label>
+                <label htmlFor="product-price" style={labelStyles}>Price</label>
                 <input
                     id="product-price"
                     type="number"
@@ -192,10 +217,11 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSave, onCancel }) 
                     required
                     step="0.01"
                     min="0.01"
-                    style={{ width: '100%', padding: '0.5rem' }}
+                    max="99999999.99"
+                    style={inputStyles}
                 />
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginTop: '1rem' }}>
+            <div style={buttonContainerStyles}>
                 <button type="button" className="button" onClick={onCancel}>Cancel</button>
                 <button type="submit" className="button button-primary">Save</button>
             </div>

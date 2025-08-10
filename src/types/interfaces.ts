@@ -59,6 +59,7 @@ export interface Order {
     date: Date; // El JSON de la API enviará un string, que se puede convertir a objeto Date
     status: OrderStatus;
     Products: OrderProduct[];
+    finalPrice: number;
 }
 
 

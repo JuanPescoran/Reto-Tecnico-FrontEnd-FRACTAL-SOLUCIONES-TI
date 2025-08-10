@@ -1,36 +1,66 @@
-/* src/pages/ProductsPage.css */
+/**
+ * Estilos específicos para la página de gestión de productos (ProductsPage).
+ * Estos estilos definen la apariencia de la "tarjeta" principal que contiene
+ * el título, los botones y la tabla.
+ */
+
+/*
+ * .content-card
+ * El contenedor principal que actúa como una tarjeta flotante.
+ * Le da estructura a la página y la separa visualmente del fondo.
+ */
 .content-card {
-    background-color: var(--surface-color);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding: 2rem;
+    background-color: var(--surface-color); /* Blanco, definido en index.css */
+    border-radius: 12px; /* Bordes más redondeados para un look moderno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra sutil para dar profundidad */
+    padding: 2rem; /* Espaciado interno generoso */
 }
 
+/*
+ * .card-header
+ * La sección superior de la tarjeta, que contiene el título de la página
+ * y el botón de acción principal (ej. "Add New Product").
+ */
 .card-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    justify-content: space-between; /* Coloca el título a la izquierda y el botón a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-bottom: 2rem; /* Espacio debajo del encabezado */
+    padding-bottom: 1.5rem; /* Espacio interno inferior */
+    border-bottom: 1px solid var(--border-color); /* Línea divisoria sutil */
 }
 
 .card-header h1 {
-    margin: 0;
+    margin: 0; /* Elimina el margen por defecto del h1 para un control preciso */
+    font-size: 1.75rem; /* Tamaño de fuente para el título principal */
 }
 
+/*
+ * .options-cell
+ * Un contenedor para los botones de acción dentro de la tabla (ej. "Edit", "Delete").
+ * Utiliza flexbox para alinear los botones y añadir espacio entre ellos.
+ */
 .options-cell {
     display: flex;
     gap: 0.5rem; /* Espacio entre los botones de opciones */
 }
 
-/* Estilos para cuando la tabla está vacía */
+/*
+ * .empty-state
+ * Estilos para el mensaje que se muestra cuando no hay datos en la tabla.
+ * Proporciona una mejor experiencia de usuario que una tabla vacía.
+ */
 .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--text-color-light);
+    text-align: center; /* Centra el texto */
+    padding: 4rem 2rem; /* Mucho espaciado interno para que destaque */
+    color: var(--text-color-light); /* Color de texto secundario para el párrafo */
+    border: 2px dashed var(--border-color); /* Borde punteado para indicar un área vacía */
+    border-radius: 8px;
+    margin-top: 1rem;
 }
 
 .empty-state h3 {
-    color: var(--text-color);
+    color: var(--text-color); /* Color de texto principal para el título */
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }

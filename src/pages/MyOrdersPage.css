@@ -1,0 +1,101 @@
+.content-card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.options-cell {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-color-light);
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.empty-state h3 {
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.status-cell {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos base para nuestro <select> que ahora parecerá un badge */
+.status-badge {
+    border: none;
+    border-radius: 12px; /* Forma de píldora */
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    /* Quitar la apariencia por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Añadir una flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 28px; /* Espacio para la flecha */
+    position: relative;
+    padding-left: 24px; /* Espacio para el punto */
+}
+
+/* El punto indicador de color */
+.status-badge::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-badge[data-status="Pending"]::before {
+    background-color: #f59e0b; /* Amarillo */
+}
+.status-badge[data-status="InProgress"]::before {
+    background-color: #007bff; /* Azul */
+}
+.status-badge[data-status="Completed"]::before {
+    background-color: #28a745; /* Verde */
+}
+
+/* Estilo para cuando el menú desplegable está abierto (solo en algunos navegadores) */
+.status-badge:focus {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.status-badge:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    background-image: none; /* Ocultar la flecha */
+    padding-right: 12px;
+}
