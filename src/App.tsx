@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { MyOrdersPage } from './pages/MyOrdersPage';
 import { ProductsPage } from './pages/ProductsPage';
-import {AddEditOrderPage} from "./pages/AddEditOrderPage.tsx";
+import {AddEditOrderPage} from "./pages/AddEditOrderPage";
 
 export const App: React.FC = () => {
     return (
